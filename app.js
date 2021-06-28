@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const productRoutes = require('./routes/products');
+const scoreRoutes = require('./routes/scores');
 
-mongoose.connect('mongodb+srv://Admin:GeAMhvAhCfS7eD8@cluster0.xknvl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://Admin:GeAMhvAhCfS7eD8@cluster0.haglt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -23,6 +23,6 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 
-app.use('/api/products', productRoutes)
+app.use('/api/scores', scoreRoutes)
 
 module.exports = app;
