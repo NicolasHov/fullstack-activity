@@ -1,10 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const scoreRoutes = require('./routes/scores');
 
-mongoose.connect('mongodb+srv://Admin:GeAMhvAhCfS7eD8@cluster0.haglt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+const path = 'mongodb+srv://Admin:'+process.env.MONGO_PASSWORD+'@cluster0.haglt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+
+mongoose.connect(path,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
